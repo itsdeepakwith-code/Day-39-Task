@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentor-Student Assignment System</title>
+    <style>
+      /* Basic styling for a clean layout */
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+      label {
+        margin-bottom: 5px;
+      }
+      input,
+      select {
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .results {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+      .results h3 {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Create Mentor</h2>
+    <form id="create-mentor-form">
+      <label for="mentor-name">Name:</label>
+      <input type="text" id="mentor-name" name="name" required />
+      <label for="mentor-expertise">Expertise:</label>
+      <input type="text" id="mentor-expertise" name="expertise" required />
+      <button type="submit">Create Mentor</button>
+    </form>
+    <h2>Create Student (Assign to Mentor)</h2>
+    <form id="create-student-form">
+      <label for="student-name">Name:</label>
+      <input type="text" id="student-name" name="name" required />
+      <label for="mentor-select">Assign to Mentor:</label>
+      <select id="mentor-select" name="mentorId" required></select>
+      <button type="submit">Create Student</button>
+    </form>
+
+    <h2>List Students without Mentor</h2>
+    <button id="get-unassigned-students">Get Unassigned Students</button>
+    <div id="unassigned-students-results" class="results"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
